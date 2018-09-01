@@ -1,0 +1,22 @@
+= form_for @movie do |f|
+  - if @movie.errors.any?
+    %h2= pluralize(@movie.errors.count, 'error')
+    %ul
+      - @movie.errors.full_messages.each do |msg|
+        %li= msg
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :description
+    = f.text_area :description
+  %p
+    = f.label :movie_length
+    = f.text_field :movie_length
+  %p
+    = f.label :director
+    = f.text_field :director
+  %p
+    = f.label :rating
+    = f.text_field :rating
+  %p= f.submit
