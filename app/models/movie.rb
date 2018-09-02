@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  has_many :reviews
   belongs_to :user
   validates :title, :description, presence: true
   has_attached_file :image, styles: { medium: "400x600#" }

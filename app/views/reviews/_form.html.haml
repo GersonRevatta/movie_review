@@ -1,0 +1,8 @@
+= form_for [@movie,@review] do |f|
+  %p
+    = f.label :rating
+    = f.number_field :rating
+  %p
+    = f.label :comment
+    = f.text_area :comment
+  %p= f.submit
